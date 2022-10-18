@@ -8,6 +8,11 @@ body{
     background-repeat: no-repeat;
 }
 
+article,header{
+    max-width:1250px;
+    margin:0 auto;
+    padding:0 15px;
+}
 
 .hide{
     position:fixed;
@@ -55,10 +60,6 @@ body{
 }
 
 
-article,header{
-    max-width:1250px;
-    margin:0 auto;
-}
 
 
 header{
@@ -70,7 +71,7 @@ header{
 .top {
     display: flex;
     justify-content: center;
-    padding:15px;
+    padding:15px 0;
 }
 .top .menu{
     width:25px; height:20px;
