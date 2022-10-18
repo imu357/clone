@@ -7,51 +7,7 @@ main,header{
     padding:0 15px;
 }
 
-.hide{
-    position:fixed;
-    padding:200px 15%;
-    z-index:999999;
-    background-color: rgba(0,0,0,0.5);
-    width:100%; height:100%;
-    display: none;
-}
-.hide > a{
-    position:absolute;
-    right:1%; top:1%;
-    padding:15px;
-    font-size:0;
-}
-.hide > a::before{
-    content:'\F659';
-    font-size:24px;
-    color:#fff;
-}
-
-
-.search{
-    border-bottom:1px solid #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.search > input{
-    width:100%;
-    padding:8px 25px 8px 0;
-    background-color: transparent;
-    border-width:0 0 1px 0;
-    font-size:18px;
-    outline: none;    
-}
-.search > a{
-    font-size:0px;
-    background-color: transparent;
-    border:none;
-}
-.search > a::before{
-    content:'\F52A';
-    font-size:20px;
-}
-
+.hide{display: none;}
 
 header{
     position: sticky;
@@ -66,35 +22,13 @@ header{
     justify-content: center;
     padding:15px 0;
 }
-.top .menu{
-    width:25px; height:20px;
-    position:relative;
-    background: none;
-    border: none;
-    display:none;
-}
-.top .menu > span{
-    position: absolute;
-    left:0;
-    width:100%; height: 1px;
-    background-color: #000;
-}
-.top .menu > span:nth-of-type(1){top:0;}
-.top .menu > span:nth-of-type(2){top:50%;}
-.top .menu > span:nth-of-type(3){top:100%;}
+.top .menu{display:none;}
+
 .top > a:nth-of-type(2) > img{
     max-width:72px;
     width:100%;
 }
-.top > a:nth-of-type(3){
-    font-size:0;
-    display: none;
-}
-.top > a:nth-of-type(3)::before{
-    content:'\F52A';
-    font-size:20px;
-}
-
+.top > a:nth-of-type(3){display: none;}
 
 
 .top1{
@@ -117,19 +51,7 @@ header{
 }
 
 
-.top2{
-    display:flex;
-    justify-content: space-evenly;
-    margin:0 auto 0 auto;
-    display:none;
-}
-.top2 > a{
-    color:#000;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-
+.top2{display:none;}
 
 
 main > div{text-align: center;}
@@ -202,7 +124,6 @@ footer > p:nth-child(1){
 
 
 
-
 @media(max-width:991px){
     
     .hide{
@@ -267,6 +188,7 @@ footer > p:nth-child(1){
     }
     .top .menu{
         width:20px; height:15px;
+        position:relative;
         background: none;
         border: none;
         display:inline;
@@ -294,17 +216,7 @@ footer > p:nth-child(1){
     }
     
     
-    .top1{
-        display:none;
-        justify-content: space-evenly;
-        margin:0 auto 0 auto;
-    }
-    .top1 > a{
-        color:#000;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    
+    .top1{display:none;}
     
     .top2{
         display:flex;
@@ -320,11 +232,9 @@ footer > p:nth-child(1){
         font-weight: normal;
     }
     
-
     
     main{padding:15px;}
     
-    main > div{text-align: center;}
     main > div > p:nth-of-type(1) > img{
         width:100%;
         margin-bottom: 100px;
@@ -337,10 +247,6 @@ footer > p:nth-child(1){
     }
     
     
-    main > ul{
-        margin-top:80px; 
-        text-align: center;
-    }
     main > ul .ex{margin-bottom: 20px;}
     main > ul .ex > p{position: relative;}
     main > ul .ex > p > span{
@@ -384,15 +290,6 @@ footer > p:nth-child(1){
     main > ul .ex .ex4{margin-bottom:50px;}
     
 
-    footer{
-        background-color: #00a5d7;
-        text-align: center;
-        padding:10px;
-    }
-    footer > p{
-        color:white;
-        font-size:16px;
-    }
     footer > p:nth-child(1){
         line-height: 2;
         padding-top:40px;
