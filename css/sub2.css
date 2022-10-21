@@ -38,25 +38,50 @@ header{
 .top > a:nth-of-type(3){display: none;}
 
 
-.top1{
+.top1{position:relative;}
+.top1 .topSub1 ul{
     display:flex;
     justify-content: space-evenly;
     margin:0 auto 0 auto;
+    padding:20px 0;
 }
-.top1 > li > a{
-    color:#fff;
+.top1 .topSub1 ul > li{
+    color:#000;
     font-size: 18px;
     font-weight: bold;
+    margin:0 auto;
 }
-.top1 > li > div > a{
-    display:none;
+.top1 .topSub1 ul > li > a:hover{color:#00a5d7;}
+.top1 .topSub1 ul > li:nth-of-type(1) > a{color:#00a5d7;}
+.top1 .topSub2{
+    width:100%;
+    left:0; bottom:0;
+    transform:translateY(-100%);
+    background-color: rgba(0, 165, 215, 0.7);
+    position:absolute;
+    transition: 0.5s;
+    opacity: 0;
+}
+.top1 .topSub2.active{
+    opacity: 1;
+    transform:translateY(100%);
+}
+.top1 .topSub2 > ul{
+    display:flex;
+    justify-content: space-between;
+    margin:0 auto 0 auto;
     font-size:15px;
     color:rgba(255, 255, 255, 0.5);
 }
-.top1 > li > a:hover{
-    color:#00a5d7;
+
+.top1 .topSub2 > ul > li{
+    margin:0 auto;
 }
-.top1 > li:nth-of-type(1) > a{color:#00a5d7;}
+.top1 .topSub2 > ul > li > a{
+    display:block;
+    color:#fff;
+    padding:15px 0;
+}
 
 
 .top2{display:none;}
