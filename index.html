@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
     <link href="./css/index.css" rel="stylesheet">
-    <script defer src="./clone.js"></script>
+    <script defer src="./js/index.js"></script>
 </head>
 <body>
 
@@ -35,128 +35,6 @@
         </div>
     </div>
 
-    <div class="logimg">
-        <article class="login">
-            <h2>로그인</h2>
-            <a href="#" class="bi bi-x-lg">EXIT</a>
-            <form>
-                <div class="write">
-                    <input type="text" name="email" placeholder="이메일">
-                    <input type="text" name="pw" placeholder="비밀번호">
-                </div>
-                <p>
-                    <input type="checkbox" id="checkbox" checked>
-                    <label for="checkbox">로그인상태유지</label>
-                </p>
-                <button class="btn">로그인</button>
-                <p>
-                    <a href="#">회원가입</a>
-                    <a href="#">아이디·비밀번호 찾기</a>
-                </p>
-            </form>
-        </article>
-    </div>
-
-    <div class="agreeimg">
-        <article class="agree">
-            <h2>약관동의</h2>
-            <a href="#" class="bi bi-x-lg">EXIT</a>
-            <div class="detail">
-                <p>
-                    <input type="checkbox" id="check1">
-                    <label for="check1">이용약관, 개인정보 수집 및 이용에 모두 동의합니다.</label>
-                </p>
-                <p>
-                    <input type="checkbox" id="check2">
-                    <label for="check2">이용약관 동의 <em>(필수)</em></label>
-                    <div>
-                        제1조 목적
-
-본 이용약관은 “사이트명”(이하 "사이트")의 서비스의 이용조건과 운영에 관한 제반 사항 규정을 목적으로 합니다.
-                    </div>
-                </p>
-                <p>
-                    <input type="checkbox" id="check3">
-                    <label for="check3">개인정보 수집 및 이용 동의 <em>(필수)</em></label>
-                    <div>
-                        1. 개인정보 수집목적 및 이용목적
-
-(1) 홈페이지 회원 가입 및 관리
-회원 가입 의사 확인, 회원제 서비스 제공에 따른 본인 식별․인증, 회원자격 유지․관리, 
-                    </div>
-                </p>
-            </div>
-            <div class="choose">
-                <a href="#">취소</a>
-                <a href="#">가입하기</a>
-            </div>
-        </article>
-    </div>
-
-
-    <header>
-        <div class="top">
-            <a href="#" class="menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
-            <a href="./index.html"><img src="./img/HOME/4bafadffea6f4.png" alt="HOME"></a>
-            <a href="#" class="bi bi-search">SEARCH</a>
-        </div>
-        
-        <div class="top1">
-            <nav class="topSub1">
-                <ul>
-                    <li><a href="./sub1.html">BRAND</a></li>
-                    <li><a href="#">MENU</a></li>
-                    <li><a href="#">FRANCHISSE</a></li>
-                    <li><a href="#">STORE</a></li>
-                    <li><a href="#">NEWS</a></li>
-                </ul>
-            </nav>
-
-            <div class="topSub2">
-                <ul>
-                    <li>
-                        <a href="./sub1.html">ABOUT US</a>
-                        <a href="./sub2.html">MOKITO</a>
-                    </li>
-                    <li>
-                        <a href="#">SIGNATURE</a>
-                        <a href="#">SEASON</a>
-                        <a href="#">COFFEE</a>
-                        <a href="#">BEVERAGE</a>
-                        <a href="#">DESSERT</a>
-                    </li>
-                    <li>
-                        <a href="#">가맹절차</a>
-                        <a href="#">가맹설계비용</a>
-                        <a href="#">인테리어</a>
-                        <a href="#">가맹문의</a>
-                    </li>
-                    <li>
-                        <a href="#">매장찾기</a>
-                    </li>
-                    <li>
-                        <a href="#">NEWS</a>
-                        <a href="#">고객의소리</a>
-                        <a href="#">공지사항</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    
-    <nav class="top2">
-        <a href="./sub1.html">BRAND</a>
-        <a href="#">MENU</a>
-        <a href="#">FRANCHISSE</a>
-        <a href="#">STORE</a>
-        <a href="#">NEWS</a>
-    </nav>
-    
-    
     <div class="side">
         <a href="#" class="bi bi-x-lg">EXIT</a>
         <div class="subside">
@@ -224,10 +102,194 @@
         </div>
     </div>
 
+    <div class="logimg">
+        <article class="login">
+            <h2>로그인</h2>
+            <a href="#" class="bi bi-x-lg">EXIT</a>
+            <form>
+                <div class="write">
+                    <input type="text" name="email" placeholder="이메일">
+                    <input type="text" name="pw" placeholder="비밀번호">
+                </div>
+                <p>
+                    <input type="checkbox" id="checkbox" checked>
+                    <label for="checkbox">로그인상태유지</label>
+                </p>
+                <button class="btn">로그인</button>
+                <p>
+                    <a href="#">회원가입</a>
+                    <a href="#">아이디·비밀번호 찾기</a>
+                </p>
+            </form>
+        </article>
+    </div>
+
+    <div class="agreeimg">
+        <article class="agree">
+            <h2>약관동의</h2>
+            <a href="#" class="bi bi-x-lg">EXIT</a>
+            <div class="detail">
+                <p>
+                    <input type="checkbox" id="check1" name="all">
+                    <label for="check1">이용약관, 개인정보 수집 및 이용에 모두 동
+     의합니다.</label>
+                </p>
+                <p>
+                    <input type="checkbox" id="check2" name="first">
+                    <label for="check2">이용약관 동의 <em>(필수)</em></label>
+                    <div>
+                        제1조 목적
+
+본 이용약관은 “사이트명”(이하 "사이트")의 서비스의 이용조건과 운영에 관한 제반 사항 규정을 목적으로 합니다.
+                    </div>
+                </p>
+                <p>
+                    <input type="checkbox" id="check3" name="second">
+                    <label for="check3">개인정보 수집 및 이용 동의 <em>(필수)</em></label>
+                    <div>
+                        1. 개인정보 수집목적 및 이용목적
+
+(1) 홈페이지 회원 가입 및 관리
+회원 가입 의사 확인, 회원제 서비스 제공에 따른 본인 식별․인증, 회원자격 유지․관리, 
+                    </div>
+                </p>
+            </div>
+            <div class="choose">
+                <a href="#">취소</a>
+                <a href="#">가입하기</a>
+            </div>
+        </article>
+    </div>
+
+    <div class="joinimg">
+        <article class="join">
+            <h2>회원가입</h2>
+            <a href="#" class="bi bi-x-lg">EXIT</a>
+            <div>
+                <p><img src="./img/HOME/default_profile.png"></img></p>
+                <span class="material-icons-outlined">photo_camera</span>
+            </div>
+            <form>
+                <input type="text" placeholder="이메일">
+                <input type="text" placeholder="비밀번호">
+                <input type="text" placeholder="비밀번호 확인">
+                <p>이름<span class="bi bi-dot">dot</span></p>
+                <input type="text" placeholder="이름을(를) 입력하세요">
+            </form>
+            <button>가입하기</button>
+        </article>
+    </div>
+
+    <div class="findimg">
+        <article class="idfind">
+            <h2 class="active">아이디 찾기</h2>
+            <h2>비밀번호 찾기</h2>
+            <a href="#" class="bi bi-x-lg">EXIT</a>
+            
+            <div class="findtwo">
+                <div class="selecttwo">
+                    <div class="active">
+                        <button>아이디 찾기</button>
+                        <button>비밀번호 찾기</button>
+                    </div>
+                    <div>
+                        <button>아이디 찾기</button>
+                        <button>비밀번호 찾기</button>
+                    </div>
+                </div>
+
+                <div class="con">
+                    <div class="active">
+                        <input type="text" placeholder="이메일 또는 아이디">
+                        <button>아이디 찾기</button>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="가입한 아이디">
+                        <button>비밀번호 찾기</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </div>
+
+
+
+    <header>
+        <div class="top">
+            <a href="#" class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <a href="./index.html"><img src="./img/HOME/4bafadffea6f4.png" alt="HOME"></a>
+            <a href="#" class="bi bi-search">SEARCH</a>
+        </div>
+        
+        <div class="top1">
+            <ul>
+                <li><a href="./sub1.html">BRAND</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">FRANCHISSE</a></li>
+                <li><a href="#">STORE</a></li>
+                <li><a href="#">NEWS</a></li>
+            </ul>
+        </div>
+
+        <div class="topSub2">
+            <ul>
+                <li>
+                    <a href="./sub1.html">ABOUT US</a>
+                    <a href="./sub2.html">MOKITO</a>
+                </li>
+                <li>
+                    <a href="#">SIGNATURE</a>
+                    <a href="#">SEASON</a>
+                    <a href="#">COFFEE</a>
+                    <a href="#">BEVERAGE</a>
+                    <a href="#">DESSERT</a>
+                </li>
+                <li>
+                    <a href="#">가맹절차</a>
+                    <a href="#">가맹설계비용</a>
+                    <a href="#">인테리어</a>
+                    <a href="#">가맹문의</a>
+                </li>
+                <li>
+                    <a href="#">매장찾기</a>
+                </li>
+                <li>
+                    <a href="#">NEWS</a>
+                    <a href="#">고객의소리</a>
+                    <a href="#">공지사항</a>
+                </li>
+            </ul>
+        </div>
+        
+    </header>
+    
+    <nav class="top2">
+        <a href="./sub1.html">BRAND</a>
+        <a href="#">MENU</a>
+        <a href="#">FRANCHISSE</a>
+        <a href="#">STORE</a>
+        <a href="#">NEWS</a>
+    </nav>
+    
+    
 
     <main>
         <div>
-            <p><img src="./img/HOME/b0c630c11cfd1.jpg" alt=""></p>
+            <div class="imgAuto">
+                <figure><img src="./img/HOME/b0c630c11cfd1.jpg" alt=""></figure>
+                <figure><img src="./img/HOME/7255ecada5650.png" alt=""></figure>
+                <figure><img src="./img/HOME/2d76ac8cd7eb9.png" alt=""></figure>
+                <aside class="btn">
+                    <button class="active"></button>
+                    <button></button>
+                    <button></button>
+                </aside>
+            </div>
             <b>Everyday For Everyone</b>
             <p>
                 매일 마시는 커피 한잔.
