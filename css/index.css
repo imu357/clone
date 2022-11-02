@@ -9,19 +9,19 @@ main{
 
 
 header{
-    position: sticky;
-    left:0; top:0;
+    position: fixed;
+    width:100%;
     z-index:9999;
-    background-color: transparent;
+    background-color: #fff;
 }
-header.active{background-color: #fff;}
 
 
-.top {
+.top{
     margin: 0 auto;
     display: flex;
     justify-content: center;
     padding:15px 0;
+    background-color: #fff;
 }
 .top .menu{display:none;}
 
@@ -33,12 +33,12 @@ header.active{background-color: #fff;}
 
 
 .top1{
-    max-width: 1250px;
-    margin:0 auto;
+    width:100%;
     position:relative;
-    z-index:9;
+    z-index:999;
+    background-color: #fff;
 }
-.top1 > ul{
+.top1 .topSub1{
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -46,34 +46,31 @@ header.active{background-color: #fff;}
     margin:0 auto;
     padding:20px 0;
     text-align: center;
+
 }
-.top1 > ul > li{
+.top1 .topSub1 > li{
     font-size: 18px;
     font-weight: bold;
     width:100%;
     cursor: pointer;
 }
-.top1 > ul > li > a{
+.top1 .topSub1 > li > a{
     color:#212121;
     transition:0.5s;
 }
-.top1 > ul > li > a:hover{color:#00a5d7;}
+.top1 .topSub1 > li > a:hover{color:#00a5d7;}
 
 
 .topSub2{
     width:100%;
+    position:absolute;
     left:0; bottom:0;
     transform:translateY(0%);
     background-color: rgba(0, 165, 215, 0.7);
-    position:absolute;
     transition: 0.5s;
-    opacity: 0;
+    z-index:-1;
 }
-.topSub2.active{
-    z-index:999;
-    opacity: 1;
-    transform:translateY(100%);
-}
+.topSub2.active{transform:translateY(100%);}
 .topSub2 > ul{
     display:flex;
     justify-content: space-between;
@@ -110,29 +107,31 @@ header.active{background-color: #fff;}
 
 
 
-main > div{
-    text-align: center;
-}
-main .imgAuto {
+main > div{text-align: center;}
+
+.imgs{
     max-width:1250px;
-    display:flex;
-    margin:0 auto 100px auto;
     position:relative;
+    margin:0 auto 100px auto;
     overflow: hidden;
 }
-main .imgAuto > figure{
-    width:100%; height:100%;
+.imgs .imgAuto {
+    display:flex;
+}
+.imgs .imgAuto > figure{
+    width:100%;
     flex-shrink: 0;
     margin:0;
 }
-main .imgAuto > figure > img{
-    width:100%; height:100%;
+.imgs .imgAuto > figure > img{
+    width:100%; height: 100%;
+    object-fit: cover;
 }
-main .imgAuto .btn{
+.imgs .btn{
     position:absolute;
-    left:45%; bottom:5%;
+    left:47%; bottom:5%;
 }
-main .imgAuto .btn > button{
+.imgs .btn > button{
     width:15px; height:15px;
     border-radius: 50%;
     border:1px solid #fff;
@@ -141,14 +140,16 @@ main .imgAuto .btn > button{
     margin:0 6px;
     padding:0;
 }
-main .imgAuto .btn > button.active{background-color: #fff;}
-main > div > b{font-size: 48px;}
-main > div > p{
+.imgs .btn > button.active{background-color: #fff;}
+
+
+
+
+main > div:nth-of-type(2) > b{font-size: 48px;}
+main > div:nth-of-type(2) > p{
     font-size: 20px;
     white-space:pre-line;
 }
-
-
 
 main > ul{
     margin-top:80px; 
@@ -318,10 +319,10 @@ footer > p:nth-child(1){
         font-size: 12px;
         font-weight: normal;
     }
-    
+
 
     .side{
-        display: none;
+        display:none;
         position:fixed;
         z-index:99999;
         left:0; top:0;
@@ -337,59 +338,66 @@ footer > p:nth-child(1){
         position:absolute;
         left:275px; top:20px;
         font-size: 0;
-        display:inline;
     }
     .side > a::before{
         content:'\F659';
         font-size:20px;
         color:#fff;
     }
-    .side .subside{
+    .subside{
         width:260px; height: 100%;
         background-color: #fff;
-        transition: 0.5s;
-        transform:translateX(-280px);
     }
-    .side .subside.active{transform:translateX(0%);}
-    .side .subside > div{
+    .subside.active{
+        animation-duration: 0.5s;
+        animation-delay: 1s;
+    }
+    @keyframes subside_active{
+        0%{transform: translateX(-100%);}
+        100%{transform: translateX(0%);}
+    }
+    
+    
+    .subside > div{
         background-color: #000;
         padding:20px;
         display: flex;
         justify-content: space-between;
 
     }
-    .side .subside > div > a{color:#fff;}
-    .side .subside > div > a:nth-of-type(2){font-size: 12px;}
-    .side .subside > ul > li{
+    .subside > div > a{color:#fff;}
+    .subside > div > a:nth-of-type(2){font-size: 12px;}
+    .subside > ul > li{
         border-bottom:1px solid #e7e7e7;
         cursor:pointer;
     }
-    .side .subside > ul > li > div{font-size: 13px;}
-    .side .subside > ul > li > p{
+    .subside > ul > li > div{font-size: 13px;}
+    .subside > ul > li > p{
         width:100%; height:40px;
         padding:12px 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .side .subside > ul > li > p > a:nth-of-type(2){
+    .subside > ul > li > p > a:nth-of-type(2){
         font-size:0;
     }
-    .side .subside > ul > li > p > a:nth-of-type(2)::before{
+    .subside > ul > li > p > a:nth-of-type(2)::before{
         content:'\F282';
         font-size:15px;
         transform: rotateX(0deg);
     }
-    .side .subside > ul > li > p > a:nth-of-type(2).active::before{
+    .subside > ul > li > p > a:nth-of-type(2).active::before{
         transform: rotateX(-180deg);
     }
-    .side .subside > ul > li > div{
+    .subside > ul > li > div{
         display: none;
         flex-direction: column;
         margin-bottom:15px;
+        transition:0.5s;
     }
-    .side .subside > ul > li > div.active{display: block;}
-    .side .subside > ul > li > div.active > a{
+    .subside > ul > li > div.active{display: inline-block;}
+    .subside > ul > li > div.active > a{
         display:block;
         padding:5px 50px 5px 30px;
     }
@@ -690,27 +698,31 @@ footer > p:nth-child(1){
 
 
     main{padding:15px;}
-    
-    main .imgAuto {
+
+    .imgs{
         max-width:1250px;
-        display:flex;
-        margin:0 auto 100px auto;
         position:relative;
+        margin:0 auto 100px auto;
         overflow: hidden;
     }
-    main .imgAuto > figure{
-        width:100%; height:100%;
+    .imgs .imgAuto {
+        display:flex;
+
+    }
+    .imgs .imgAuto > figure{
+        width:100%;
         flex-shrink: 0;
         margin:0;
     }
-    main .imgAuto > figure > img{
-        width:100%; height:100%;
+    .imgs .imgAuto > figure > img{
+        width:100%; height: 100%;
+        object-fit: cover;
     }
-    main .imgAuto .btn{
+    .imgs .btn{
         position:absolute;
         left:45%; bottom:3%;
     }
-    main .imgAuto .btn > button{
+    main .imgs .btn > button{
         width:10px; height:10px;
         border-radius: 50%;
         border:1px solid #fff;
@@ -719,9 +731,9 @@ footer > p:nth-child(1){
         margin:0 3px;
         padding:0;
     }
-    main .imgAuto .btn > button.active{background-color: #fff;}
-    main > div > b{font-size: 26px;}
-    main > div > p{
+    main .imgs .btn > button.active{background-color: #fff;}
+    main > div:nth-of-type(2) > b{font-size: 26px;}
+    main > div:nth-of-type(2) > p{
         font-size: 14px;
         white-space:pre-line;
         margin-top:30px;

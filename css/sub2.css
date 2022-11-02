@@ -5,24 +5,22 @@
 body{
     background-image:url("../img/MOKITO/a857ba348bbb2.png");
     background-size: 100% 500px;
-    background-position: 0 0;
     background-repeat: no-repeat;
 }
 
 
 
 header{
-    position: sticky;
-    margin:0 auto;
-    left:0; top:0;
+    position: fixed;
+    width:100%;
     z-index:9999;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0);
     transition:0.5s;
 }
 header.active{background-color: #fff;}
-header.active .top1 > ul > li > a{color:#000;}
-header.active .top1 > ul > li > a:hover{color:#00a5d7;}
-header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
+header.active .top1 .topSub1 > li > a{color:#000;}
+header.active .top1 .topSub1 > li > a:hover{color:#00a5d7;}
+header.active .top1 .topSub1 > li:nth-of-type(1) > a{color:#00a5d7;}
 
 
 .top {
@@ -30,7 +28,10 @@ header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
     display: flex;
     justify-content: center;
     padding:15px 0;
+    background-color: rgba(255, 255, 255, 0);
+    transition: 0.5s;
 }
+.top.active{background-color: #fff}
 .top .menu{display:none;}
 
 .top > a:nth-of-type(2) > img{
@@ -41,12 +42,14 @@ header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
 
 
 .top1{
-    max-width: 1250px;
-    margin:0 auto;
+    width:100%;
     position:relative;
-    z-index:9;
+    background-color: rgba(255, 255, 255, 0);
+    z-index:999;
+    transition: 0.5s;;
 }
-.top1 > ul{
+.top1.active{background-color: #fff}
+.top1 .topSub1{
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -55,18 +58,18 @@ header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
     padding:20px 0;
     text-align: center;
 }
-.top1 > ul > li{
+.top1 .topSub1 > li{
     font-size: 18px;
     font-weight: bold;
     width:100%;
     cursor: pointer;
 }
-.top1 > ul > li > a{
+.top1 .topSub1 > li > a{
     color:#fff;
     transition:0.5s;
 }
-.top1 > ul > li > a:hover{color:rgba(201, 224, 253, 0.3);}
-.top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
+.top1 .topSub1 > li > a:hover{color:rgba(201, 224, 253, 0.3);}
+.top1 .topSub1 > li:nth-of-type(1) > a{color:#00a5d7;}
 
 
 .topSub2{
@@ -76,10 +79,10 @@ header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
     background-color: rgba(0, 165, 215, 0.7);
     position:absolute;
     transition: 0.5s;
+    z-index: -1;
     opacity: 0;
 }
 .topSub2.active{
-    z-index:999;
     opacity: 1;
     transform:translateY(100%);
 }
@@ -117,18 +120,21 @@ header.active .top1 > ul > li:nth-of-type(1) > a{color:#00a5d7;}
 
 .findimg{display:none}
 
-
-h2{
+main{
+    padding-top:250px;
+}
+main > h2{
     font-size:48px;
     color:#fff;
     text-align: center;
-    margin:100px 0 270px 0;
+    margin-bottom:270px;
 }
 
 article > h2{
     font-size:34px;
     color:rgb(136, 87, 27);
-    margin:0 0 70px 0;
+    text-align: center;
+    margin-bottom:70px;
 }
 
 
@@ -744,15 +750,13 @@ footer > p:nth-child(1){
     }
 
 
-
-    h2{
+    main{padding-top:100px;}
+    main > h2{
         font-size:30px;
-        margin:80px 0 150px 0;
+        margin-bottom:150px;
     }
 
-
     article > h2{font-size:26px;}
-
 
     .list > li, .list .set2 > div{
         display: flex;

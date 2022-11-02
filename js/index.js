@@ -1,33 +1,29 @@
 
-    const header = document.querySelector('header');
-    
-    window.addEventListener('scroll',function(){
-        if(window.scrollY > 0){
-            header.classList.add('active');
-        }else{
-            header.classList.remove('active');
-        }
-    });
-
-
-
-    const topSub1 = document.querySelector('.top1 ul');
+    const topSub1 = document.querySelector('.topSub1');
     const topSub2 = document.querySelector('.topSub2');
 
-    function nav(){
-        if(event.target.className !== 'topSub1'){
+    function head(n){
+        if(n){
             topSub2.classList.add('active');
         }else{
             topSub2.classList.remove('active');
         }
     }
-    topSub1.addEventListener('mouseover',nav);
-    topSub2.addEventListener('mouseout',function(){
-        topSub2.classList.remove('active');
-    });
 
+    topSub1.addEventListener('mouseover',function(){
+        head(true);
+    })
+    topSub2.addEventListener('mouseover',function(){
+        head(true);
+    })
+
+    topSub1.addEventListener('mouseleave',function(){
+        head(false);
+    })
+    topSub2.addEventListener('mouseleave',function(){
+        head(false);
+    })
     
-
 
 
     const search = document.querySelector('header .top a:nth-of-type(3)');
@@ -43,20 +39,29 @@
     });
 
 
+
     const menu = document.querySelector('header .top .menu');
     const side = document.querySelector('.side');
     const subside = document.querySelector('.side .subside');
     const subQuit = document.querySelector('.side a');
 
     menu.addEventListener('click',function(){
-        side.classList.toggle('active');
-        subside.classList.toggle('active');
+        side.classList.add('active');
+        subside.classList.add('active');
     });
 
     subQuit.addEventListener('click',function(){
         side.classList.remove('active');
         subside.classList.remove('active');
     });
+
+    side.addEventListener('click',function(){
+        if(event.target.className == 'side active'){
+            side.classList.remove('active');
+            subside.classList.remove('active');
+        }
+    });
+
 
 
     const unfold = document.querySelectorAll('.side .subside ul li p');
@@ -69,6 +74,7 @@
             unfoldFont[i].classList.toggle('active');
         });
     }
+
 
 
     const loginIn = document.querySelector('.side .subside div');
@@ -84,6 +90,13 @@
     loginOut.addEventListener('click',function(){
         login.classList.remove('active');
     });
+
+    login.addEventListener('click',function(){
+        if(event.target.className == 'logimg active'){
+            login.classList.remove('active');
+        }
+    });
+
 
 
     const agreeIn = document.querySelector('.logimg .login form p:nth-of-type(2) a:nth-of-type(1)');
@@ -103,6 +116,48 @@
     agreeCancel.addEventListener('click',function(){
         agree.classList.remove('active');
     });
+
+    agree.addEventListener('click',function(){
+        if(event.target.className == 'agreeimg active'){
+            agree.classList.remove('active');
+        }
+    });
+
+
+    const agreeAll = document.querySelector('.detail p:nth-of-type(1) input');
+    const agreeFirst = document.querySelector('.detail p:nth-of-type(2) input');
+    const agreeSecond = document.querySelector('.detail p:nth-of-type(4) input');
+
+    function Join(){
+        agreeAll.addEventListener('click',function(){
+            if(agreeAll.checked){
+                agreeFirst.checked=true;
+                agreeSecond.checked=true;
+            }else{
+                agreeFirst.checked=false;
+                agreeSecond.checked=false;
+            }
+        });
+    }
+    Join();
+
+    agreeFirst.addEventListener('click',function(){
+        if(agreeSecond.checked && agreeAll.checked==false){
+            agreeAll.checked=true;
+        } 
+        if(agreeAll.checked && agreeFirst.checked==false && agreeSecond.checked){
+            agreeAll.checked=false;
+        }
+    });
+
+    agreeSecond.addEventListener('click',function(){
+        if(agreeFirst.checked  && agreeAll.checked==false){
+            agreeAll.checked=true;
+        }
+        if(agreeAll.checked && agreeFirst.checked && agreeSecond.checked==false){
+            agreeAll.checked=false;
+        }
+    });
     
     
 
@@ -111,20 +166,33 @@
     const joinOut = document.querySelector('.joinimg .join a');
 
     joinIn.addEventListener('click',function(){
-        agree.classList.remove('active');
-        join.classList.add('active');
+        if(agreeAll.checked && agreeFirst.checked && agreeSecond.checked){
+            agree.classList.remove('active');
+            join.classList.add('active');
+        }else{
+            alert('이용약관 및 개인정보 처리방침에 동의하셔야 가입이 가능합니다.');
+        }
     });
     
     joinOut.addEventListener('click',function(){
         join.classList.remove('active');
     });
 
+    join.addEventListener('click',function(){
+        if(event.target.className == 'joinimg active'){
+            join.classList.remove('active');
+        }
+    });
+
+
 
     const findIn = document.querySelector('.logimg .login form p:nth-of-type(2) a:nth-of-type(2)');
     const find = document.querySelector('.findimg');
     const findOut = document.querySelector('.findimg .idfind a');
+
     const findBtn = document.querySelectorAll('.findimg .idfind .findtwo .selecttwo div:nth-of-type(1) button');
     const findBtn2 = document.querySelectorAll('.findimg .idfind .findtwo .selecttwo div:nth-of-type(2) button');
+
     const findDoc = document.querySelectorAll('.findimg .idfind .findtwo .con div');
     const findH2 = document.querySelectorAll('.findimg .idfind h2');
     const findSelect = document.querySelectorAll('.findimg .idfind .findtwo .selecttwo div');
@@ -137,6 +205,13 @@
     findOut.addEventListener('click',function(){
         find.classList.remove('active');
     });
+
+    find.addEventListener('click',function(){
+        if(event.target.className == 'findimg active'){
+            find.classList.remove('active');
+        }
+    });
+
 
     let idx=0;
 
@@ -171,3 +246,49 @@
             idx=key;
         });
     });
+
+
+
+    const imgAuto = document.querySelector('.imgAuto');
+    const btn2 = document.querySelectorAll('.btn button');
+
+    const image = document.querySelectorAll('.imgAuto figure');
+
+    // let clonefirst = image[0].cloneNode(true);
+    // imgAuto.append(clonefirst);
+
+    let num, progress, btnAuto;
+
+    progress = function(){
+        id++;
+        if(id == 3){
+            id=0;
+            
+        }
+        imgAuto.style = `transform:translateX(-${id*100}%); transition:1s;`;
+    }
+
+    setInterval(progress,2000);
+
+    btnAuto = function(){
+        
+        
+    }
+
+    setInterval(btnAuto,2000);
+    
+    let id =0;
+
+    btn2.forEach(function(elm,k){
+        btn2[k].addEventListener('click',function(){
+            btn2[id].classList.remove('active');
+            btn2[k].classList.add('active');
+            idx = k;
+            imgAuto.style=`transform:translateX(-${id*100}%); transition:1s;`;
+        });
+    });
+
+    
+
+    
+
