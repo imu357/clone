@@ -9,7 +9,8 @@ main{
 
 
 header{
-    position: fixed;
+    position: sticky;
+    top:0;
     width:100%;
     z-index:9999;
     background-color: #fff;
@@ -108,42 +109,6 @@ header{
 
 
 main > div{text-align: center;}
-
-.imgs{
-    max-width:1250px;
-    position:relative;
-    margin:0 auto 100px auto;
-    overflow: hidden;
-}
-.imgs .imgAuto {
-    display:flex;
-}
-.imgs .imgAuto > figure{
-    width:100%;
-    flex-shrink: 0;
-    margin:0;
-}
-.imgs .imgAuto > figure > img{
-    width:100%; height: 100%;
-    object-fit: cover;
-}
-.imgs .btn{
-    position:absolute;
-    left:47%; bottom:5%;
-}
-.imgs .btn > button{
-    width:15px; height:15px;
-    border-radius: 50%;
-    border:1px solid #fff;
-    background-color: transparent;
-    cursor: pointer;
-    margin:0 6px;
-    padding:0;
-}
-.imgs .btn > button.active{background-color: #fff;}
-
-
-
 
 main > div:nth-of-type(2) > b{font-size: 48px;}
 main > div:nth-of-type(2) > p{
@@ -321,6 +286,7 @@ footer > p:nth-child(1){
     }
 
 
+    
     .side{
         display:none;
         position:fixed;
@@ -347,14 +313,17 @@ footer > p:nth-child(1){
     .subside{
         width:260px; height: 100%;
         background-color: #fff;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        
     }
     .subside.active{
-        animation-duration: 0.5s;
-        animation-delay: 1s;
+        display:block;
+        
     }
-    @keyframes subside_active{
-        0%{transform: translateX(-100%);}
-        100%{transform: translateX(0%);}
+    @keyframes subside{
+        0%{transform: translateX(-100%); opacity: 0;}
+        100%{transform: translateX(0%); opacity: 1;}
     }
     
     
@@ -396,7 +365,9 @@ footer > p:nth-child(1){
         margin-bottom:15px;
         transition:0.5s;
     }
-    .subside > ul > li > div.active{display: inline-block;}
+    .subside > ul > li > div.active{
+        display: inline-block;
+    }
     .subside > ul > li > div.active > a{
         display:block;
         padding:5px 50px 5px 30px;
@@ -659,7 +630,7 @@ footer > p:nth-child(1){
     }
     .findimg .idfind .findtwo .selecttwo > div:nth-of-type(1) > button:nth-of-type(2){
         border-width:1px 1px 1px 1px;
-        border-color:#ddd #ddd #000 #000;
+        border-color:#ddd #fff #000 #000;
         background-color: #F3F3F3;
         margin-left:-3px;
     }
@@ -699,39 +670,6 @@ footer > p:nth-child(1){
 
     main{padding:15px;}
 
-    .imgs{
-        max-width:1250px;
-        position:relative;
-        margin:0 auto 100px auto;
-        overflow: hidden;
-    }
-    .imgs .imgAuto {
-        display:flex;
-
-    }
-    .imgs .imgAuto > figure{
-        width:100%;
-        flex-shrink: 0;
-        margin:0;
-    }
-    .imgs .imgAuto > figure > img{
-        width:100%; height: 100%;
-        object-fit: cover;
-    }
-    .imgs .btn{
-        position:absolute;
-        left:45%; bottom:3%;
-    }
-    main .imgs .btn > button{
-        width:10px; height:10px;
-        border-radius: 50%;
-        border:1px solid #fff;
-        background-color: transparent;
-        cursor: pointer;
-        margin:0 3px;
-        padding:0;
-    }
-    main .imgs .btn > button.active{background-color: #fff;}
     main > div:nth-of-type(2) > b{font-size: 26px;}
     main > div:nth-of-type(2) > p{
         font-size: 14px;

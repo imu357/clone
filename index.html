@@ -23,9 +23,110 @@
     <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./img/favicon-16x16.png" sizes="16x16" />
     <link href="./css/index.css" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <script defer src="./js/index.js"></script>
 </head>
 <body>
+
+    <style>
+        html,
+        body {
+            /* position: relative; */
+            height: 100%;
+        }
+
+
+        .swiper{
+            max-width: 1250px;
+            height:80vh; 
+            margin:0px auto 100px auto;
+        }
+        .swiper-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            transition-property: transform;
+            box-sizing: content-box;
+        }
+
+
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+        }
+
+        .swiper-slide img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .swiper-pagination {
+            position: absolute;
+            text-align: center;
+            transition: .3s opacity;
+            transform: translate3d(0,0,0);
+            z-index: 10;
+        }
+
+        .swiper-horizontal>.swiper-pagination-bullets, 
+        .swiper-pagination-bullets.swiper-pagination-horizontal, 
+        .swiper-pagination-custom, .swiper-pagination-fraction {
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+        }
+        
+        .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 6px;
+        }
+
+        .swiper-pagination-bullet{
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            border:1px solid #fff;
+            border-radius: 50%;
+            background: transparent;
+            opacity: 1;
+        }
+        .swiper-pagination-bullet-active{
+            background: #fff;
+        }
+
+        @media(max-width:991px){
+            .swiper{
+                max-width: 1250px;
+                height:60vh;
+                margin:0px auto 80px auto;
+            }
+            .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+            .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0 5px;
+            }
+            .swiper-pagination-bullet{
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                border:1px solid #fff;
+                border-radius: 50%;
+                background: transparent;
+            }
+            .swiper-pagination-bullet-active{
+                background: #fff;
+            }
+        }
+    </style>
 
     <div class="hide">
         <a href="#" class="bi bi-x-lg">EXIT</a>
@@ -279,17 +380,13 @@
     
     
     <main>
-        <div class="imgs">
-            <div class="imgAuto">
-                <figure><img src="./img/HOME/b0c630c11cfd1.jpg" alt=""></figure>
-                <figure><img src="./img/HOME/7255ecada5650.png" alt=""></figure>
-                <figure><img src="./img/HOME/2d76ac8cd7eb9.png" alt=""></figure>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="./img/HOME/b0c630c11cfd1.jpg"></div>
+                <div class="swiper-slide"><img src="./img/HOME/7255ecada5650.png"></div>
+                <div class="swiper-slide"><img src="./img/HOME/2d76ac8cd7eb9.png"></div>
             </div>
-            <aside class="btn">
-                <button class="active"></button>
-                <button></button>
-                <button></button>
-            </aside>
+            <div class="swiper-pagination"></div>
         </div>
 
         <div>
@@ -370,6 +467,24 @@
             Copyright ⓒ 2022 히포커피 All rights reserved.
         </p>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
 
 
 </body>
