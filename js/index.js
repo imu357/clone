@@ -47,24 +47,29 @@
 
     menu.addEventListener('click',function(){
         side.classList.add('active');
-        subside.classList.add('active');
     });
 
     subQuit.addEventListener('click',function(){
-        side.classList.remove('active');
-        subside.classList.remove('active');
+        side.classList.add('active2');
+        setTimeout(()=>{
+            side.classList.remove('active');
+            side.classList.remove('active2');
+        },500)
     });
 
     side.addEventListener('click',function(){
         if(event.target.className == 'side active'){
-            side.classList.remove('active');
-            subside.classList.remove('active');
+            side.classList.add('active2');
+            setTimeout(()=>{
+                side.classList.remove('active');
+                side.classList.remove('active2');
+            },500)
         }
     });
 
 
 
-    const unfold = document.querySelectorAll('.side .subside ul li p');
+    const unfold = document.querySelectorAll('.side .subside ul li');
     const unfoldFont = document.querySelectorAll('.side .subside ul li p a:nth-of-type(2)');
     const subMenu = document.querySelectorAll('.side .subside ul li div');
     
@@ -74,6 +79,10 @@
             unfoldFont[i].classList.toggle('active');
         });
     }
+
+    $('.subside ul li').on('click',function(){
+        $(this).find('div').stop().slideToggle();
+    });
 
 
 

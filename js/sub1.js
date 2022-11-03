@@ -64,24 +64,29 @@
 
     menu.addEventListener('click',function(){
         side.classList.toggle('active');
-        subside.classList.toggle('active');
     });
 
     subQuit.addEventListener('click',function(){
-        side.classList.remove('active');
-        subside.classList.remove('active');
+        side.classList.add('active2');
+        setTimeout(()=>{
+            side.classList.remove('active');
+            side.classList.remove('active2');
+        },500)
     });
 
     side.addEventListener('click',function(){
         if(event.target.className == 'side active'){
-            side.classList.remove('active');
-            subside.classList.remove('active');
+            side.classList.add('active2');
+            setTimeout(()=>{
+                side.classList.remove('active');
+                side.classList.remove('active2');
+            },500)
         }
     });
 
 
 
-    const unfold = document.querySelectorAll('.side .subside ul li p');
+    const unfold = document.querySelectorAll('.side .subside ul li');
     const unfoldFont = document.querySelectorAll('.side .subside ul li p a:nth-of-type(2)');
     const subMenu = document.querySelectorAll('.side .subside ul li div');
     
@@ -91,6 +96,11 @@
             unfoldFont[i].classList.toggle('active');
         });
     }
+
+    $('.subside ul li').on('click',function(){
+        $(this).find('div').stop().slideToggle();
+    });
+
 
 
     const loginIn = document.querySelector('.side .subside div');
@@ -262,4 +272,45 @@
         });
     });
 
+
+
+
+
+    // console.log(window.scrollY)
+    // console.log(window.innerHeight)
+    // console.log($('.set1 img').offset().top);
+    // console.log($('.set2 img').offset().top);
+    // console.log($('.set3 img').offset().top);
+    // console.log($('.set4 img').offset().top);
+
+
+
+    // $('.set1 img').hide();
+    // $('.set2 img').hide();
+    // $('.set3 img').hide();
+    // $('.set4 img').hide();
     
+
+    // $(window).on('scroll',function(){
+    //     if(window.scrollY > $('.set1 img').offset().top - window.innerHeight){
+    //         $('.set1 img').fadeIn(500);
+    //     }
+    // });
+
+    // $(window).on('scroll',function(){
+    //     if(window.scrollY > $('.set2 img').offset().top - window.innerHeight){
+    //         $('.set2 img').fadeIn(500);
+    //     }
+    // });
+
+    // $(window).on('scroll',function(){
+    //     if(window.scrollY > $('.set3 img').offset().top - window.innerHeight){
+    //         $('.set3 img').fadeIn(500);
+    //     }
+    // });
+
+    // $(window).on('scroll',function(){
+    //     if(window.scrollY > $('.set4 img').offset().top - window.innerHeight){
+    //         $('.set4 img').fadeIn(500);
+    //     }
+    // });

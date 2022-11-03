@@ -292,14 +292,29 @@ footer > p:nth-child(1){
         position:fixed;
         z-index:99999;
         left:0; top:0;
-        padding-right:70%;
         width:100%; height:100%;
-        background-color: rgba(0,0,0,0.5);
         font-size: 14px;
     }
-    .side.active{
-        display: block;
+    .side::before{
+        content:'';
+        background-color: rgba(0,0,0,0.5);
+        width:100%; height:100%;
+        position:absolute;
+        left:0; top:0;
+        opacity: 0;
     }
+    .side.active{display: block;}
+    .side.active::before{
+        animation: bg .3s forwards;
+    }
+    .side.active2::before{
+        animation: bg .3s forwards reverse;
+    }
+    @keyframes bg {
+        0%{opacity:0}
+        100%{opacity:1}
+    }
+
     .side > a{
         position:absolute;
         left:275px; top:20px;
@@ -313,32 +328,39 @@ footer > p:nth-child(1){
     .subside{
         width:260px; height: 100%;
         background-color: #fff;
-        animation-duration: 1s;
-        animation-delay: 1s;
-        
     }
-    .subside.active{
-        display:block;
-        
+    .side.active .subside{
+        animation-name:subside_active;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
     }
-    @keyframes subside{
-        0%{transform: translateX(-100%); opacity: 0;}
-        100%{transform: translateX(0%); opacity: 1;}
+    @keyframes subside_active{
+        0%{transform: translateX(-100%);}
+        100%{transform: translateX(0%);}
     }
-    
+
+    .side.active2 .subside{
+        animation-name:subside_active2;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes subside_active2{
+        0%{transform: translateX(0%);}
+        100%{transform: translateX(-100%);}
+    }
     
     .subside > div{
         background-color: #000;
         padding:20px;
         display: flex;
         justify-content: space-between;
-
     }
     .subside > div > a{color:#fff;}
     .subside > div > a:nth-of-type(2){font-size: 12px;}
     .subside > ul > li{
         border-bottom:1px solid #e7e7e7;
         cursor:pointer;
+        overflow: hidden;
     }
     .subside > ul > li > div{font-size: 13px;}
     .subside > ul > li > p{
@@ -363,12 +385,9 @@ footer > p:nth-child(1){
         display: none;
         flex-direction: column;
         margin-bottom:15px;
-        transition:0.5s;
     }
-    .subside > ul > li > div.active{
-        display: inline-block;
-    }
-    .subside > ul > li > div.active > a{
+
+    .subside > ul > li > div > a{
         display:block;
         padding:5px 50px 5px 30px;
     }
