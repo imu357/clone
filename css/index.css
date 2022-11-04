@@ -255,11 +255,11 @@ footer > p:nth-child(1){
         height:60vh;
         margin:0px auto 80px auto;
     }
-    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
-    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    main .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+    main .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
         margin: 0 5px;
     }
-    .swiper-pagination-bullet{
+    main .swiper-pagination-bullet{
         width: 10px;
         height: 10px;
         display: inline-block;
@@ -267,7 +267,7 @@ footer > p:nth-child(1){
         border-radius: 50%;
         background: transparent;
     }
-    .swiper-pagination-bullet-active{
+    main .swiper-pagination-bullet-active{
         background: #fff;
     }
 
