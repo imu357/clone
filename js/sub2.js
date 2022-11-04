@@ -60,11 +60,10 @@
 
     const menu = document.querySelector('header .top .menu');
     const side = document.querySelector('.side');
-    const subside = document.querySelector('.side .subside');
     const subQuit = document.querySelector('.side a');
 
     menu.addEventListener('click',function(){
-        side.classList.add('active');
+        side.classList.toggle('active');
     });
 
     subQuit.addEventListener('click',function(){
