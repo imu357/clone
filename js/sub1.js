@@ -151,9 +151,9 @@
 
     
     
-    const agreeAll = document.querySelector('.detail p:nth-of-type(1) input');
-    const agreeFirst = document.querySelector('.detail p:nth-of-type(2) input');
-    const agreeSecond = document.querySelector('.detail p:nth-of-type(4) input');
+    const agreeAll = document.querySelector('.detail p input');
+    const agreeFirst = document.querySelector('.detail .check1 input');
+    const agreeSecond = document.querySelector('.detail .check2 input');
 
     function Join(){
         agreeAll.addEventListener('click',function(){

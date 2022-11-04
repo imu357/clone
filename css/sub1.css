@@ -642,15 +642,17 @@ footer > p:nth-child(1){
         font-size:13px;
     }
     .agreeimg .agree .detail p{margin-bottom:15px;}
-    .agreeimg .agree .detail p:nth-of-type(1) label{white-space: pre;}
+    .agreeimg .agree .detail p label{white-space: pre;}
     .agreeimg .agree .detail label{cursor: pointer;}
     .agreeimg .agree .detail em{
         font-style: normal;
         color:#f00;
     }
-    .agreeimg .agree .detail div{
+    .agreeimg .agree .detail .check1{margin-bottom: 20px;}
+    .agreeimg .agree .detail .check1 div, .agreeimg .agree .detail .check2 div{
         width:100%; height:90px;
         border:1px solid #000;
+        margin-top:15px;
         overflow-y:scroll;
         white-space: pre-line;
     }
