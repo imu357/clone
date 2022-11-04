@@ -271,3 +271,19 @@
             idx=key;
         });
     });
+
+
+    for(let i=1; i<4; i++){
+        $(window).on('scroll',function(){
+            if(matchMedia('(max-width:991px)').matches){
+                $(`.list li:nth-of-type(${i})`).find('img').show();
+            }else{
+                if($(window).scrollTop() > $(`.list li:nth-of-type(${i})`).find('img').offset().top - $(window).height()){
+                    $(`.list li:nth-of-type(${i})`).find('img').fadeIn(500);
+                }else(
+                    $(`.list li:nth-of-type(${i})`).find('img').hide()
+                )
+            }
+            
+        });
+    }

@@ -172,14 +172,18 @@ article > h2{
 .intro > img{
     max-width:260px;
     width:100%;
+    margin-bottom:40px;
 }
 .intro > p:nth-of-type(2){
     font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
-    margin-top:40px;
+    animation:cubic 0.5s cubic-bezier(.62,1.97,.28,-0.68);
 }
-
+@keyframes cubic{
+    0%{transform:scale(0.5)}
+    100%{transform:scale(1.0)}
+}
 
 
 .list > li{
@@ -191,7 +195,13 @@ article > h2{
     max-width:260px;
     width:100%;
     border-radius: 30px;
+    animation: scale 1s;
 }
+@keyframes scale{
+    0%{transform:scale(0.9)}
+    100%{transform:scale(1.0)}
+}
+
 .list > li > div > b{
     width:45px;
     background-color: rgb(136, 87, 27);
@@ -854,6 +864,11 @@ footer > p:nth-child(1){
         font-size: 14px;
         font-weight: 700;
         line-height: 1.5;
+        animation:cubic_2 0s;
+    }
+    @keyframes cubic_2{
+        0%{transform:scale(1.0)}
+        100%{transform:scale(1.0)}
     }
     
     
@@ -867,7 +882,13 @@ footer > p:nth-child(1){
         width:100%;
         border-radius:30px;
         margin-left:30%;
+        animation:scale_2 0s;
     }
+    @keyframes scale_2{
+        0%{transform:scale(0.9)}
+        100%{transform:scale(1.0)}
+    }
+
     .list > li > div > b{
         background-color: rgb(136, 87, 27);
         min-width:12%;
