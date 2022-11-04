@@ -63,7 +63,7 @@
     const subQuit = document.querySelector('.side a');
 
     menu.addEventListener('click',function(){
-        side.classList.toggle('active');
+        side.classList.add('active');
     });
 
     subQuit.addEventListener('click',function(){
