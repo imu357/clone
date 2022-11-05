@@ -1,6 +1,10 @@
 @import url('./common.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+=======
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined");
+>>>>>>> bc5d0cc5294c5f605611be33453ab4a66f18587f
 
 body{
     background-image:url("../img/MOKITO/a857ba348bbb2.png");
@@ -672,7 +676,10 @@ footer > p:nth-child(1){
         cursor: pointer;
     }
     .joinimg .join > div > span:before{
+<<<<<<< HEAD
         font-family: 'Material Symbols Outlined';
+=======
+>>>>>>> bc5d0cc5294c5f605611be33453ab4a66f18587f
         content:'\e412';
         font-size:20px;
         background-color: #999;
