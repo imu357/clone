@@ -1,25 +1,106 @@
 @import url('./common.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+/* @import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined"); */
 
-main,header{
-    max-width:1250px;
+html,
+body {
+    /* position: relative; */
+    height: 100%;
+}
+
+
+.swiper{
+    max-width: 1250px;
+    height:80vh; 
+    margin:0px auto 100px auto;
+}
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+}
+
+
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.swiper-pagination {
+    position: absolute;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+
+main .swiper-horizontal>.swiper-pagination-bullets, 
+main .swiper-pagination-bullets.swiper-pagination-horizontal, 
+main .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+}
+
+main .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+main .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 6px;
+}
+
+
+main .swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border:1px solid #fff;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 1;
+}
+main .swiper-pagination-bullet-active{
+    background: #fff;
+}
+
+
+
+
+
+main{
     margin:0 auto;
     padding:0 15px;
 }
 
-.hide{display: none;}
 
 header{
     position: sticky;
-    left:0; top:0;
+    top:0;
+    width:100%;
     z-index:9999;
-    text-align: center;
+    background-color: #fff;
 }
 
-.top {
+
+.top{
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     padding:15px 0;
+    background-color: #fff;
 }
 .top .menu{display:none;}
 
@@ -30,54 +111,66 @@ header{
 .top > a:nth-of-type(3){display: none;}
 
 
-.top1{position:relative;}
-.top1 .topSub1 ul{
-    display:flex;
-    justify-content: space-evenly;
-    margin:0 auto 0 auto;
-    padding:20px 0;
-}
-.top1 .topSub1 ul > li{
-    color:#000;
-    font-size: 18px;
-    font-weight: bold;
-    margin:0 auto;
-}
-.top1 .topSub1 ul > li > a:hover{color:#00a5d7;}
-.top1 .topSub2{
+.top1{
     width:100%;
-    left:0; bottom:0;
-    transform:translateY(-100%);
-    background-color: rgba(0, 165, 215, 0.7);
-    position:absolute;
-    transition: 0.5s;
-    opacity: 0;
+    position:relative;
+    z-index:999;
+    background-color: #fff;
 }
-.top1 .topSub2.active{
-    opacity: 1;
-    transform:translateY(100%);
-}
-.top1 .topSub2 > ul{
+.top1 .topSub1{
     display:flex;
     justify-content: space-between;
-    margin:0 auto 0 auto;
+    align-items: center;
+    width:900px;
+    margin:0 auto;
+    padding:20px 0;
+    text-align: center;
+
+}
+.top1 .topSub1 > li{
+    font-size: 18px;
+    font-weight: bold;
+    width:100%;
+    cursor: pointer;
+}
+.top1 .topSub1 > li > a{
+    color:#212121;
+    transition:0.5s;
+}
+.top1 .topSub1 > li > a:hover{color:#00a5d7;}
+
+
+.topSub2{
+    width:100%;
+    position:absolute;
+    left:0; bottom:0;
+    transform:translateY(0%);
+    background-color: rgba(0, 165, 215, 0.7);
+    transition: 0.5s;
+    z-index:-1;
+}
+.topSub2.active{transform:translateY(100%);}
+.topSub2 > ul{
+    display:flex;
+    justify-content: space-between;
+    width:900px;
+    margin:0 auto;
     font-size:15px;
     color:rgba(255, 255, 255, 0.5);
+    text-align: center;
 }
-
-.top1 .topSub2 > ul > li{
-    margin:0 auto;
-}
-.top1 .topSub2 > ul > li > a{
+.topSub2 > ul > li{width:100%;}
+.topSub2 > ul > li > a{
     display:block;
-    color:#fff;
+    color:rgba(255, 255, 255, 0.5);
     padding:15px 0;
+    transition:0.5s;
 }
+.topSub2 > ul > li > a:hover{color:#fff;}
 
-.top1 .topSub2 > ul > li:nth-of-type(2){margin:0 auto 0 7%;}
-.top1 .topSub2 > ul > li:nth-of-type(3){margin:0 auto 0 7.5%;}
-.top1 .topSub2 > ul > li:nth-of-type(4){margin:0 auto 0 9.5%;}
-.top1 .topSub2 > ul > li:nth-of-type(5){margin:0 auto 0 7%;}
+
+
+.hide{display:none;}
 
 .top2{display:none;}
 
@@ -87,19 +180,19 @@ header{
 
 .agreeimg{display:none;}
 
+.joinimg{display:none;}
+
+.findimg{display:none}
+
+
+
 main > div{text-align: center;}
-main > div > p:nth-of-type(1) > img{
-    max-width:1250px;
-    width:100%;
-    margin-bottom: 100px;
-}
-main > div > b{font-size: 48px;}
-main > div > p:nth-of-type(2){
+
+main > div:nth-of-type(2) > b{font-size: 48px;}
+main > div:nth-of-type(2) > p{
     font-size: 20px;
     white-space:pre-line;
 }
-
-
 
 main > ul{
     margin-top:80px; 
@@ -117,10 +210,9 @@ main > ul .ex > p > span{
     color:#000;
     border-radius: 9px;
     transition:.5s;
+    cursor:default;
 }
-main > ul .ex > p > span:hover{
-    background-color: #fff;
-}
+main > ul .ex > p > span:hover{background-color: #fff;}
 main > ul .ex > p > img{
     max-width:1250px;
     width:100%;
@@ -159,6 +251,29 @@ footer > p:nth-child(1){
 
 @media(max-width:991px){
     
+    .swiper{
+        max-width: 1250px;
+        height:60vh;
+        margin:0px auto 80px auto;
+    }
+    main .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+    main .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 5px;
+    }
+    main .swiper-pagination-bullet{
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        border:1px solid #fff;
+        border-radius: 50%;
+        background: transparent;
+    }
+    main .swiper-pagination-bullet-active{
+        background: #fff;
+    }
+
+
+
     .hide{
         position:fixed;
         z-index:999999;
@@ -167,7 +282,7 @@ footer > p:nth-child(1){
         width:100%; height:100%;
         display: none;
     }
-    .hide.active{display: inline;}
+    .hide.active{display: block;}
     .hide > a{
         position:absolute;
         right:1%; top:1%;
@@ -194,10 +309,12 @@ footer > p:nth-child(1){
         font-size:18px;
         outline: none;    
     }
+    .search > input::placeholder{color:#fff;}
     .search > a{
         font-size:0px;
         background-color: transparent;
         border:none;
+        color:#fff;
     }
     .search > a::before{
         content:'\F52A';
@@ -226,7 +343,7 @@ footer > p:nth-child(1){
         position:relative;
         background: none;
         border: none;
-        display:inline;
+        display:block;
     }
     .top .menu > span{
         position: absolute;
@@ -252,6 +369,8 @@ footer > p:nth-child(1){
     
     
     .top1{display:none;}
+
+    .topSub2{display: none;}
     
     .top2{
         display:flex;
@@ -266,78 +385,110 @@ footer > p:nth-child(1){
         font-size: 12px;
         font-weight: normal;
     }
-    
 
+
+    
     .side{
-        display: none;
+        display:none;
         position:fixed;
         z-index:99999;
         left:0; top:0;
-        padding-right:70%;
-        height:100%;
-        background-color: rgba(0,0,0,0.5);
+        width:100%; height:100%;
         font-size: 14px;
     }
-    .side.active{
-        display: inline;
+    .side::before{
+        content:'';
+        background-color: rgba(0,0,0,0.5);
+        width:100%; height:100%;
+        position:absolute;
+        left:0; top:0;
+        opacity: 0;
     }
+    .side.active{display: block;}
+    .side.active::before{
+        animation: bg .3s forwards;
+    }
+    .side.active2::before{
+        animation: bg .3s forwards reverse;
+    }
+    @keyframes bg {
+        0%{opacity:0}
+        100%{opacity:1}
+    }
+
     .side > a{
         position:absolute;
         left:275px; top:20px;
         font-size: 0;
-        display:inline;
     }
     .side > a::before{
         content:'\F659';
         font-size:20px;
         color:#fff;
     }
-    .side .subside{
+    .subside{
         width:260px; height: 100%;
         background-color: #fff;
-        transition: 0.5s;
-        transform:translateX(-280px);
     }
-    .side .subside.active{transform:translateX(0%);}
-    .side .subside > div{
+    .side.active .subside{
+        animation-name:subside_active;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes subside_active{
+        0%{transform: translateX(-100%);}
+        100%{transform: translateX(0%);}
+    }
+
+    .side.active2 .subside{
+        animation-name:subside_active2;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes subside_active2{
+        0%{transform: translateX(0%);}
+        100%{transform: translateX(-100%);}
+    }
+    
+    .subside > div{
         background-color: #000;
         padding:20px;
         display: flex;
         justify-content: space-between;
-
     }
-    .side .subside > div > a{color:#fff;}
-    .side .subside > div > a:nth-of-type(2){font-size: 12px;}
-    .side .subside > ul > li{
+    .subside > div > a{color:#fff;}
+    .subside > div > a:nth-of-type(2){font-size: 12px;}
+    .subside > ul > li{
         border-bottom:1px solid #e7e7e7;
         cursor:pointer;
+        overflow: hidden;
     }
-    .side .subside > ul > li > div{font-size: 13px;}
-    .side .subside > ul > li > p{
+    .subside > ul > li > div{font-size: 13px;}
+    .subside > ul > li > p{
         width:100%; height:40px;
         padding:12px 15px;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .side .subside > ul > li > p > a:nth-of-type(2){
+    .subside > ul > li > p > a:nth-of-type(2){
         font-size:0;
     }
-    .side .subside > ul > li > p > a:nth-of-type(2)::before{
+    .subside > ul > li > p > a:nth-of-type(2)::before{
         content:'\F282';
         font-size:15px;
         transform: rotateX(0deg);
     }
-    .side .subside > ul > li > p > a:nth-of-type(2).active::before{
+    .subside > ul > li > p > a:nth-of-type(2).active::before{
         transform: rotateX(-180deg);
     }
-    .side .subside > ul > li > div{
+    .subside > ul > li > div{
         display: none;
         flex-direction: column;
         margin-bottom:15px;
     }
-    .side .subside > ul > li > div.active{display: block;}
-    .side .subside > ul > li > div.active > a{
+
+    .subside > ul > li > div > a{
         display:block;
         padding:5px 50px 5px 30px;
     }
@@ -348,12 +499,12 @@ footer > p:nth-child(1){
         position:fixed;
         z-index:999999;
         width:100%; height:100%;
-        padding:50px 30% 70% 30%;
+        padding:50px 30% 50% 30%;
         background-color: rgba(0,0,0,0.5);
     }
-    .logimg.active{display:inline;}
+    .logimg.active{display:block;}
     .logimg .login{
-        width:100%; height:280px;
+        width:370px; height:330px;
         background-color: #fff;
         padding:25px;
         position: relative;
@@ -380,7 +531,7 @@ footer > p:nth-child(1){
         width:100%;
         padding:12px 16px;
         outline:none;
-        border:1px solid #626262;
+        border:1px solid #E0E0E0;
     }
     .logimg .login > form .write > input:nth-of-type(1){border-bottom:none;}
     .logimg .login > form > p:nth-of-type(1) > input{margin:10px 0;}
@@ -405,11 +556,12 @@ footer > p:nth-child(1){
         position:fixed;
         z-index:999999;
         width:100%; height:100%;
-        padding:50px 30% 35% 30%;
+        padding:30px 25% 20% 25%;
         background-color: rgba(0,0,0,0.5);
     }
+    .agreeimg.active{display: block;}
     .agreeimg .agree{
-        width:350px; height:480px;
+        width:370px; height:560px;
         background-color: #fff;
         padding:25px;
         position: relative;
@@ -432,14 +584,17 @@ footer > p:nth-child(1){
         font-size:13px;
     }
     .agreeimg .agree .detail p{margin-bottom:15px;}
+    .agreeimg .agree .detail p label{white-space: pre;}
     .agreeimg .agree .detail label{cursor: pointer;}
     .agreeimg .agree .detail em{
         font-style: normal;
         color:#f00;
     }
-    .agreeimg .agree .detail div{
+    .agreeimg .agree .detail .check1{margin-bottom: 20px;}
+    .agreeimg .agree .detail .check1 div, .agreeimg .agree .detail .check2 div{
         width:100%; height:90px;
         border:1px solid #000;
+        margin-top:15px;
         overflow-y:scroll;
         white-space: pre-line;
     }
@@ -463,16 +618,183 @@ footer > p:nth-child(1){
 
 
 
+    .joinimg{
+        display:none;
+        position:fixed;
+        z-index:999999;
+        width:100%; height:100%;
+        padding:20px 25% 30% 25%;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .joinimg.active{display:block;}
+    .joinimg .join{
+        width:370px; height:480px;
+        background-color: #fff;
+        padding:25px;
+        position: relative;
+    }
+    .joinimg .join > h2{
+        font-size:24px;
+        text-align: center;
+    }
+    .joinimg .join > a{
+        position:absolute;
+        right:15px; top:15px;
+        font-size: 0;
+    }
+    .joinimg .join > a:before{
+        content:'\F659';
+        font-size:16px;
+    }
+    .joinimg .join > div{
+        position:relative;
+    }
+    .joinimg .join > div > p{
+        text-align: center;
+        margin:20px 0;
+    }
+    .joinimg .join > div > p > img{
+        width:20%;
+        border-radius: 100%;
+        cursor: pointer;
+    }
+    .joinimg .join > div > span{
+        position:absolute;
+        right:35%; bottom:5%;
+        font-size:0;
+        cursor: pointer;
+    }
+    .joinimg .join > div > span:before{
+        font-family: 'Material Symbols Outlined';
+        content:'\e412';
+        font-size:20px;
+        background-color: #999;
+        color:#fff;
+        padding:7px;
+        border-radius: 50%;
+    }
+    .joinimg .join > form > input{
+        width:100%;
+        padding:10px;
+        outline:none;
+        border:1px solid #E0E0E0;
+    }
+    .joinimg .join > form > input:nth-of-type(2){border-top:none;}
+    .joinimg .join > form > input:nth-of-type(3){border-top:none;}
+    .joinimg .join > form > p{margin-top:20px;}
+    .joinimg .join > form > p > span{
+        font-size: 0;
+        color:#1A6Dff;
+    }
+    .joinimg .join > form > p > span::before{
+        content: '\F309';
+        font-size: 18px;
+    }
+    .joinimg .join > button{
+        width:100%;
+        background-color: #363636;
+        color:#fff;
+        margin-top:20px;
+        text-align: center;
+        padding:10px;
+        cursor: pointer;
+    }
+    
+
+
+    .findimg{
+        display:none;
+        position:fixed;
+        z-index:999999;
+        width:100%; height:100%;
+        padding:20px 25% 70% 25%;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .findimg.active{display:block;}
+    .findimg .idfind{
+        width:340px; height:250px;
+        background-color: #fff;
+        position: relative;
+    }
+    .findimg .idfind > h2{
+        display:none;
+        font-size:16px;
+        text-align: center;
+        padding:15px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    .findimg .idfind > h2.active{display:block;}
+    .findimg .idfind > a{
+        position:absolute;
+        right:15px; top:15px;
+        font-size: 0;
+    }
+    .findimg .idfind > a:before{
+        content:'\F659';
+        font-size:16px;
+    }
+    .findimg .idfind .findtwo{
+        padding:25px;
+    }
+    .findimg .idfind .findtwo .selecttwo > div{display:none;}
+    .findimg .idfind .findtwo .selecttwo > div.active{display:block;}
+    .findimg .idfind .findtwo .selecttwo > div > button{
+        width:50%;
+        margin:0; padding:7px;
+        font-size:14px;
+        vertical-align: top;
+        cursor: pointer;
+    }
+    .findimg .idfind .findtwo .selecttwo > div:nth-of-type(1) > button:nth-of-type(1){
+        border-width:1px 0 0 1px;
+        border-color:#000;
+        margin-right:-3px;
+        background-color: #fff;
+    }
+    .findimg .idfind .findtwo .selecttwo > div:nth-of-type(1) > button:nth-of-type(2){
+        border-width:1px 1px 1px 1px;
+        border-color:#ddd #fff #000 #000;
+        background-color: #F3F3F3;
+        margin-left:-3px;
+    }
+    .findimg .idfind .findtwo .selecttwo > div:nth-of-type(2) > button:nth-of-type(1){
+        border-width:1px 0 1px 1px;
+        border-color:#ddd #ddd #000 #ddd;
+        margin-right:-3px;
+        background-color: #F3F3F3;
+    }
+    .findimg .idfind .findtwo .selecttwo > div:nth-of-type(2) > button:nth-of-type(2){
+        border-width:1px 1px 0 1px;
+        border-color:#000;
+        background-color: #fff;
+        margin-left:-3px;
+    }
+
+    .findimg .idfind .findtwo .con > div{display:none;}
+    .findimg .idfind .findtwo .con > div.active{display:block;}
+    
+    .findimg .idfind .findtwo .con > div > input{
+        width:100%; height:40px;
+        padding:10px;
+        margin:20px 0 10px 0;
+        outline:none;
+        border:1px solid #E0E0E0;
+    }
+    .findimg .idfind .findtwo .con > div > button{
+        width:100%; height:40px;
+        background-color: rgb(136, 87, 27);
+        color:#fff;
+        border:none;
+        cursor: pointer;
+    }
+
+
 
 
     main{padding:15px;}
-    
-    main > div > p:nth-of-type(1) > img{
-        width:100%;
-        margin-bottom: 100px;
-    }
-    main > div > b{font-size: 26px;}
-    main > div > p:nth-of-type(2){
+
+    main > div:nth-of-type(2) > b{font-size: 26px;}
+    main > div:nth-of-type(2) > p{
         font-size: 14px;
         white-space:pre-line;
         margin-top:30px;
@@ -491,12 +813,9 @@ footer > p:nth-child(1){
         color:#000;
         letter-spacing: 1px;
         border-radius: 9px;
-        transition:.5s;
+        transition:0.5s;
     }
-    main > ul .ex > p > span:hover{
-        background-color: #fff;
-        pointer-events: none;
-    }
+    main > ul .ex > p > span:hover{background-color: rgba(255, 255, 255, 0.45);}
     main > ul .ex > p > img{
         max-width:1250px;
         width:100%;
