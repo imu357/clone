@@ -483,6 +483,7 @@ footer > p:nth-child(1){
     .subside{
         width:260px; height: 100%;
         background-color: #fff;
+        overflow-y:auto;
     }
     .side.active .subside{
         animation-name:subside_active;
