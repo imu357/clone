@@ -68,19 +68,9 @@
 
 
 
-    const unfold = document.querySelectorAll('.side .subside ul li');
-    const unfoldFont = document.querySelectorAll('.side .subside ul li p a:nth-of-type(2)');
-    const subMenu = document.querySelectorAll('.side .subside ul li div');
-    
-    for(let i=0; i<subMenu.length; i++){
-        unfold[i].addEventListener('click',function(){
-            subMenu[i].classList.toggle('active');
-            unfoldFont[i].classList.toggle('active');
-        });
-    }
-
     $('.subside ul li').on('click',function(){
         $(this).find('div').stop().slideToggle();
+        $(this).find('p a:nth-of-type(2)').toggleClass('active');
     });
 
 
