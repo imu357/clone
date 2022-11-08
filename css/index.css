@@ -86,7 +86,7 @@ main{
 
 
 header{
-    position: sticky;
+    position: fixed;
     top:0;
     width:100%;
     z-index:9999;
@@ -428,6 +428,7 @@ footer > p:nth-child(1){
     .subside{
         width:260px; height: 100%;
         background-color: #fff;
+        overflow-y:auto;
     }
     .side.active .subside{
         animation-name:subside_active;
